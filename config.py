@@ -1,4 +1,6 @@
 # config.py — 所有超参数与路径配置
+# 运行时可用命令行覆盖任意字段，例如：
+#   uv run python train.py --model siamunet_diff --lr 5e-4 --epochs 100
 
 import os
 
@@ -8,6 +10,7 @@ save_dir    = "checkpoints"                   # 权重保存目录
 log_dir     = "logs"                          # 日志目录
 
 #  数据配置
+dataset_name = "clcd"   # 数据集名称
 patch_size  = 256       # 训练时随机裁剪大小
 in_channels = 3         # 输入波段数
 num_classes = 2         # 0=不变，1=变化
@@ -28,4 +31,4 @@ device = "cuda"             # 训练设备 "cuda"、"cpu"
 
 # 评估配置
 eval_split = "test"
-
+checkpoint = ""
